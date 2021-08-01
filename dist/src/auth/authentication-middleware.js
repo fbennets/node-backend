@@ -18,7 +18,7 @@ const checkAuthorization = function (req, res, next) {
     try {
         userUuid = generate_and_verifyToken_1.verifyAccessTokenAndGetUserUuid(token);
         // If everything is okay, continue
-        res.locals.authenticated = userUuid;
+        res.locals.user = userUuid;
         return next();
     }
     catch (err) {

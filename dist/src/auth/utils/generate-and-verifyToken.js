@@ -8,7 +8,7 @@ const jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
 const uuid_1 = require("uuid");
 const sha256_1 = __importDefault(require("crypto-js/sha256"));
 const enc_base64_1 = __importDefault(require("crypto-js/enc-base64"));
-const isUUID_1 = __importDefault(require("validator/lib/isUUID"));
+const uuid_class_1 = require("../../types/uuid-class");
 const base_error_1 = require("../../error-handling/base-error");
 const ACCESS_TOKEN_SECRET = process.env.ACCESS_TOKEN_SECRET || "SUPER_INSECURE_SECRET";
 const REFRESH_TOKEN_SECRET = process.env.REFRESH_TOKEN_SECRET || "EVEN_WORSE_SECRET";
@@ -24,8 +24,8 @@ function generateRefreshToken() {
 exports.generateRefreshToken = generateRefreshToken;
 function verifyAccessTokenAndGetUserUuid(token) {
     const verifiedToken = jsonwebtoken_1.default.verify(token, ACCESS_TOKEN_SECRET);
-    const uuid = verifiedToken.userUuid;
-    if (isUUID_1.default(uuid)) {
+    const uuid = new uuid_class_1.UUID(verifiedToken.userUuid);
+    if (uuid.isValid()) {
         return uuid;
     }
     else {
@@ -78,23 +78,4 @@ async function issueNewToken(refreshToken, prisma) {
     }
 }
 exports.issueNewToken = issueNewToken;
-// export async function validateRefreshTokenAndGetUserId(
-//   token: string,
-//   prisma: PrismaClient
-// ) {
-//   const verifiedToken = jwt.verify(token, REFRESH_TOKEN_SECRET);
-//   const userUuid = (verifiedToken as TokenInterface).userUuid;
-//   //TODO: sanitize Uuid
-//   const user = await prisma.user.findFirst({
-//     where: { uuid: userUuid },
-//   });
-//   if (user) {
-//     return user.id;
-//   } else {
-//     //Proper error handling
-//     return "Wrong user";
-//   }
-// }
-//verify token and get uuid
-//Map uuid to userId
 //# sourceMappingURL=generate-and-verifyToken.js.map

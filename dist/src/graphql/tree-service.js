@@ -2,15 +2,25 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.TreeService = void 0;
 class TreeService {
-    findById(user, id, context) {
-        if (!user) {
-            throw new Error("Unauthorized");
-        }
-        else {
-            return context.prisma.decisionTree.findMany({
-                where: { owner: { uuid: user.uuid } },
-            });
-        }
+    async findById(id, userUuid, prisma) {
+        return prisma.decisionTree.findMany({
+            where: { owner: { uuid: userUuid.toString() } },
+        });
+    }
+    async findAll(userUuid, prisma) {
+        return prisma.decisionTree.findMany({
+            where: { owner: { uuid: userUuid.toString() } },
+        });
+    }
+    async addNew(newTreeData, userUuid, prisma) {
+        return prisma.decisionTree.create({
+            data: {
+                ...newTreeData,
+                owner: { connect: { uuid: userUuid.toString() } },
+                tags: JSON.parse(newTreeData.tags || "{}"),
+                treeData: JSON.parse(newTreeData.treeData || "{}"),
+            },
+        });
     }
 }
 exports.TreeService = TreeService;
