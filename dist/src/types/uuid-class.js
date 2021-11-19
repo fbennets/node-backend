@@ -13,7 +13,7 @@ class UUID {
         return this.str;
     }
     isValid() {
-        return isUUID_1.default(this.str);
+        return (0, isUUID_1.default)(this.str);
     }
 }
 exports.UUID = UUID;

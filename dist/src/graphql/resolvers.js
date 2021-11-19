@@ -42,29 +42,29 @@ let TreeResolver = class TreeResolver {
     }
 };
 __decorate([
-    type_graphql_1.Query((returns) => schema_1.DecisionTree),
-    __param(0, type_graphql_1.Arg("id")),
-    __param(1, type_graphql_1.Ctx("userUuid")),
-    __param(2, type_graphql_1.Ctx("prisma")),
+    (0, type_graphql_1.Query)((returns) => schema_1.DecisionTree),
+    __param(0, (0, type_graphql_1.Arg)("id")),
+    __param(1, (0, type_graphql_1.Ctx)("userUuid")),
+    __param(2, (0, type_graphql_1.Ctx)("prisma")),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [String, uuid_class_1.UUID,
         client_1.PrismaClient]),
     __metadata("design:returntype", Promise)
 ], TreeResolver.prototype, "DecisionTree", null);
 __decorate([
-    type_graphql_1.Query((returns) => [schema_1.DecisionTree]),
-    __param(0, type_graphql_1.Ctx("userUuid")),
-    __param(1, type_graphql_1.Ctx("prisma")),
+    (0, type_graphql_1.Query)((returns) => [schema_1.DecisionTree]),
+    __param(0, (0, type_graphql_1.Ctx)("userUuid")),
+    __param(1, (0, type_graphql_1.Ctx)("prisma")),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [uuid_class_1.UUID,
         client_1.PrismaClient]),
     __metadata("design:returntype", void 0)
 ], TreeResolver.prototype, "allTrees", null);
 __decorate([
-    type_graphql_1.Mutation((returns) => schema_1.DecisionTree),
-    __param(0, type_graphql_1.Arg("newTreeData")),
-    __param(1, type_graphql_1.Ctx("userUuid")),
-    __param(2, type_graphql_1.Ctx("prisma")),
+    (0, type_graphql_1.Mutation)((returns) => schema_1.DecisionTree),
+    __param(0, (0, type_graphql_1.Arg)("newTreeData")),
+    __param(1, (0, type_graphql_1.Ctx)("userUuid")),
+    __param(2, (0, type_graphql_1.Ctx)("prisma")),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [input_arguments_types_1.NewTreeInput,
         uuid_class_1.UUID,
@@ -72,7 +72,7 @@ __decorate([
     __metadata("design:returntype", void 0)
 ], TreeResolver.prototype, "addTree", null);
 TreeResolver = __decorate([
-    type_graphql_1.Resolver(schema_1.DecisionTree),
+    (0, type_graphql_1.Resolver)(schema_1.DecisionTree),
     __metadata("design:paramtypes", [tree_service_1.TreeService])
 ], TreeResolver);
 exports.TreeResolver = TreeResolver;

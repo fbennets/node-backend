@@ -2,8 +2,10 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.returnError = exports.logErrorMiddleware = exports.logError = void 0;
 const base_error_1 = require("./base-error");
+//FIXME: currently only using baseError, (how) are ApiErrors handled?
 function logError(err) {
-    console.error(err);
+    console.error(err.name);
+    console.error(err.message);
 }
 exports.logError = logError;
 function logErrorMiddleware(err, req, res, next) {
