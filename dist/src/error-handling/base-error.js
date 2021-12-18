@@ -10,7 +10,7 @@ class BaseError extends Error {
         this.statusCode = statusCode;
         this.isOperational = isOperational;
         this.additionalErrorData = additionalErrorData;
-        Error.captureStackTrace(this);
+        // Error.captureStackTrace(this);
     }
 }
 exports.BaseError = BaseError;

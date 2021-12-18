@@ -14,27 +14,27 @@ const type_graphql_1 = require("type-graphql");
 let DecisionTree = class DecisionTree {
 };
 __decorate([
-    type_graphql_1.Field((type) => type_graphql_1.ID),
+    (0, type_graphql_1.Field)((type) => type_graphql_1.ID),
     __metadata("design:type", String)
 ], DecisionTree.prototype, "id", void 0);
 __decorate([
-    type_graphql_1.Field(),
+    (0, type_graphql_1.Field)(),
     __metadata("design:type", String)
 ], DecisionTree.prototype, "name", void 0);
 __decorate([
-    type_graphql_1.Field({ nullable: true }),
+    (0, type_graphql_1.Field)({ nullable: true }),
     __metadata("design:type", String)
 ], DecisionTree.prototype, "tags", void 0);
 __decorate([
-    type_graphql_1.Field({ nullable: true }),
+    (0, type_graphql_1.Field)({ nullable: true }),
     __metadata("design:type", String)
 ], DecisionTree.prototype, "treeData", void 0);
 __decorate([
-    type_graphql_1.Field({ nullable: true }),
+    (0, type_graphql_1.Field)({ nullable: true }),
     __metadata("design:type", String)
 ], DecisionTree.prototype, "language", void 0);
 DecisionTree = __decorate([
-    type_graphql_1.ObjectType()
+    (0, type_graphql_1.ObjectType)()
 ], DecisionTree);
 exports.DecisionTree = DecisionTree;
 //# sourceMappingURL=schema.js.map

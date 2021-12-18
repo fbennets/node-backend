@@ -15,25 +15,25 @@ const type_graphql_1 = require("type-graphql");
 let NewTreeInput = class NewTreeInput {
 };
 __decorate([
-    type_graphql_1.Field(),
-    class_validator_1.MaxLength(100),
+    (0, type_graphql_1.Field)(),
+    (0, class_validator_1.MaxLength)(100),
     __metadata("design:type", String)
 ], NewTreeInput.prototype, "name", void 0);
 __decorate([
-    type_graphql_1.Field({ nullable: true }),
+    (0, type_graphql_1.Field)({ nullable: true }),
     __metadata("design:type", String)
 ], NewTreeInput.prototype, "treeData", void 0);
 __decorate([
-    type_graphql_1.Field({ nullable: true }),
+    (0, type_graphql_1.Field)({ nullable: true }),
     __metadata("design:type", String)
 ], NewTreeInput.prototype, "tags", void 0);
 __decorate([
-    type_graphql_1.Field(),
-    class_validator_1.MaxLength(10),
+    (0, type_graphql_1.Field)(),
+    (0, class_validator_1.MaxLength)(10),
     __metadata("design:type", String)
 ], NewTreeInput.prototype, "language", void 0);
 NewTreeInput = __decorate([
-    type_graphql_1.InputType()
+    (0, type_graphql_1.InputType)()
 ], NewTreeInput);
 exports.NewTreeInput = NewTreeInput;
 // @ArgsType()
