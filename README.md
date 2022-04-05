@@ -1,10 +1,11 @@
 # Open Decision
 
+THIS REPOSITORY HAS BEEN ARCHIVED
+The backend is now part of the Open Decision monorepo in /packages/api: [github.com/open-legal-tech/open-decision](https://github.com/open-legal-tech/open-decision).
+
 Welcome to the Open Decision backend!
 
 The backend is built using Node.js and Express, we are using Typescript for the whole project. The backend is providing an REST API for authentication as well as a GraphQL API for storing and managing apps build with Open Decision.
-
-The backend is mainly designed to be used in conjunction with the Open Decision frontend, which can be found here: [github.com/open-legal-tech/open-decision](https://github.com/open-legal-tech/open-decision).
 
 ## Table of content
 
